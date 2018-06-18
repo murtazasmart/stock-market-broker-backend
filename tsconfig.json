@@ -3,11 +3,18 @@
     "target": "es6",
     "module": "commonjs",
     "sourceMap": true,
+    "moduleResolution": "node",
     "noImplicitAny": true,
     "removeComments": true,
     "outDir": "./dist/",
-    "sourceMap": true,
-    "pretty": true
+    "pretty": true,
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "node_modules/*",
+        "src/types/*"
+      ]
+    }
   },
   "exclude": [
     "node_modules",

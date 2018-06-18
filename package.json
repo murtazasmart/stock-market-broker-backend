@@ -2,7 +2,7 @@
   "name": "type-broker",
   "version": "1.0.0",
   "description": "Dockerized node-express app written in typescript",
-  "main": "app.js",
+  "main": "./dist/app.js",
   "dependencies": {
     "body-parser": "^1.15.2",
     "compression": "^1.6.2",
@@ -28,10 +28,13 @@
     "supertest-as-promised": "^4.0.2",
     "tsc": "^1.20150623.0",
     "tslint": "^3.15.1",
-    "typescript": "^1.8.10"
+    "typescript": "^2.5.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build && node ./dist/app.js",
+    "build": "npm run build-ts",
+    "build-ts": "tsc"
   },
   "keywords": [
     "typescript",
