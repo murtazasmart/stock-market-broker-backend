@@ -23,6 +23,10 @@ This project is a fully working bootstrap for developping an express-mongoose ap
 
 ## Useful knowledge
 
+### for production build
+
+`sudo docker-compose -f docker-compose.prod.yml up`
+
 ### Rebuilding the images
 After adding new npm or typings package, you will have to rebuild your images as follows:
 
