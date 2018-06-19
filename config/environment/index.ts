@@ -47,15 +47,15 @@ const commonConfig = {
 // Export the config object based on the NODE_ENV
 // ==============================================
 const config: IConfig = commonConfig
-
-if (commonConfig.env === 'development') {
-  _.merge(config, developmentConfig)
-} else if (commonConfig.env === 'test') {
-  _.merge(config, testConfig)
-} else if (commonConfig.env === 'production') {
-  _.merge(config, productionConfig)
-} else {
-  throw new Error('Please set an environment')
-}
+_.merge(config, developmentConfig)
+// if (commonConfig.env === 'development') {
+//   _.merge(config, developmentConfig)
+// } else if (commonConfig.env === 'test') {
+//   _.merge(config, testConfig)
+// } else if (commonConfig.env === 'production') {
+//   _.merge(config, productionConfig)
+// } else {
+//   throw new Error('Please set an environment')
+// }
 
 export default config

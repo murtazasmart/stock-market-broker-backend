@@ -5,16 +5,8 @@ MAINTAINER Aurélien Hervé <mail@aurelien-herve.com>
 RUN mkdir /app
 WORKDIR /app
 
-ADD ./package.json .
+RUN apk update && apk upgrade && \
+apk add --no-cache bash git openssh
 
 RUN npm install -g nodemon typescript@2.6 tslint mocha yarn
-RUN npm install
-
-COPY . .
-
-RUN npm run build
-
-EXPOSE 9000
-CMD ["node", "dist/app.js"]
-# ADD ./yarn.lock .
-# RUN yarn
+RUN git clone https://github.com/nadunindunil/broker-api.git && cd broker-api && yarn
