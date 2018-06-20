@@ -18,7 +18,7 @@ This project is a fully working bootstrap for developping an express-mongoose ap
  - clone the repo
  - go to the root folder of the project
  - run `docker build -t stock-market-broker-backend .` this will build the image
- - to run the image `sudo docker run -p 3000:9000 stock-market-broker-backend`
+ - to run the image `docker run -p 3000:9000 stock-market-broker-backend`
  - browse `http://localhost:3000/api/ping`, `http://localhost:3000/api/views/promise`, `http://localhost:3000/api/views/await`
 
 ## CI/CD
