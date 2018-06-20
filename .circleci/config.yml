@@ -35,4 +35,8 @@ jobs:
         
       # run tests!
       - run: yarn test
-
+deployment:
+  staging:
+    branch: cicd
+    heroku:
+      appname: hidden-badlands-21838
