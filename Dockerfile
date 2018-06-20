@@ -1,6 +1,6 @@
 FROM mhart/alpine-node:6.5
 
-MAINTAINER Aurélien Hervé <mail@aurelien-herve.com>
+MAINTAINER Murtaza Anverali <murtazasmart@gmail.com>
 
 RUN mkdir /app
 WORKDIR /app
