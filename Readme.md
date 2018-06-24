@@ -1,6 +1,7 @@
 
 [ ![Codeship Status for murtazasmart/stock-market-broker-backend](https://app.codeship.com/projects/8093dd90-566d-0136-1bf7-2222d9c84640/status?branch=master)](https://app.codeship.com/projects/294769)
 # Broker API Simulator
+This is the component which implements the Backend for the Broker, the frontend and AI directly communicates with the API REST service. This has been implemented using Typescript, NodeJs, Docker and much more.
 
 # Project details
 ### Team name: EXIT
@@ -19,9 +20,6 @@
 | Stock market broker backend | https://github.com/murtazasmart/stock-market-broker-backend | https://hidden-badlands-21838.herokuapp.com/ |
 | Stock market analyst service | https://github.com/murtazasmart/stock-market-analyst-service/ | https://stock-market-analyst.herokuapp.com |
 | Stock market bank service | https://github.com/murtazasmart/stock-market-bank-service/ | https://stock-market-bank-service.herokuapp.com/ |
-
-## About this
-This project is a Stock Share Market Broker API Simulator. 
 
 ## Installation
 
@@ -42,3 +40,6 @@ This project is a Stock Share Market Broker API Simulator.
  - This has been done using code-ship. It runs the entire build and checks for failure for every push.
  - It goes to deployment step when pushed to master/pull requests etc. Deployment step checks if all tests passed and then deploys to the server automatically.
  - Heroku has been used as the deployment server.
+
+## Code quality/Linting
+TSlint has been used for this.
