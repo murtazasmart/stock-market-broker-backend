@@ -17,7 +17,10 @@ describe ('GET /api/views/async', function () {
     expect(t.status).to.equal(200)
     expect(t.body).to.have.property('lastVisit')
     expect(t.body).to.have.property('count', 1)
+
+
   })
+
 
   it('creates a view', async function () {
     expect(await View.count({})).to.equal(1)

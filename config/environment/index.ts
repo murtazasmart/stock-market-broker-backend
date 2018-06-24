@@ -48,14 +48,16 @@ const commonConfig = {
 // ==============================================
 const config: IConfig = commonConfig
 _.merge(config, developmentConfig)
-// if (commonConfig.env === 'development') {
-//   _.merge(config, developmentConfig)
-// } else if (commonConfig.env === 'test') {
-//   _.merge(config, testConfig)
-// } else if (commonConfig.env === 'production') {
-//   _.merge(config, productionConfig)
-// } else {
-//   throw new Error('Please set an environment')
-// }
+
+/*if (commonConfig.env === 'development') {
+  _.merge(config, developmentConfig)
+} else if (commonConfig.env === 'test') {
+  _.merge(config, testConfig)
+} else if (commonConfig.env === 'production') {
+  _.merge(config, productionConfig)
+} else {
+  throw new Error('Please set an environment')
+}*/
+
 
 export default config
