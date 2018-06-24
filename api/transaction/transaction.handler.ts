@@ -8,14 +8,15 @@ export async function CreateTransaction(RequestBody: any, Transaction: any) {
       quantity: RequestBody.quantity,
       type: RequestBody.type,
       price: RequestBody.price,
+      gameId:RequestBody.gameId,
       turn : RequestBody.turn
     });
 
     return _transaction;
 }
 
-export async function GetHistory(Transaction: any) {
-  const all : ITransaction[] = await Transaction.find({});
+export async function GetHistory(RequestBody:any,Transaction: any) {
+  const all : ITransaction[] = await Transaction.find({gameId:RequestBody.gameId});
   return all;
 }
 

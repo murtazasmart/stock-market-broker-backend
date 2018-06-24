@@ -4,7 +4,7 @@ import { Router } from 'express'
 const router = Router()
 
 router.post('/', controller.transaction)
-router.get('/history', controller.getHistory)
+router.get('/history/:gameId', controller.getHistory)
 router.get('/portfolio/:name', controller.portfolio)
 
 export default router
