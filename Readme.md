@@ -1,6 +1,4 @@
 
-# Broker API Simulator
-
 [ ![Codeship Status for murtazasmart/stock-market-broker-backend](https://app.codeship.com/projects/8093dd90-566d-0136-1bf7-2222d9c84640/status?branch=master)](https://app.codeship.com/projects/294769)
 # Broker API Simulator
 
