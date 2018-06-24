@@ -10,6 +10,7 @@ export async function transaction(req : express.Request, res : express.Response)
       quantity: req.body.quantity,
       type: req.body.type,
       price: req.body.price,
+      gameId:req.body.gameId,
       turn : req.body.turn
     })
     res.send({status: true, transaction: _transaction})
@@ -24,7 +25,7 @@ export async function transaction(req : express.Request, res : express.Response)
 
 export async function getHistory(req : express.Request, res : express.Response) {
   try {
-    const all : ITransaction[] = await Transaction.find({})
+    const all : ITransaction[] = await Transaction.find({gameId: req.params.gameId})
     res.send(all)
   } catch (error) {
     res

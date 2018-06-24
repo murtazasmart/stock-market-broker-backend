@@ -7,7 +7,8 @@ export interface ITransaction extends mongoose.Document {
   name: string,
   quantity: number,
   type: string,
-  price: number
+  price: number,
+  gameId:string,
   turn: number
   public: {
     _id: string,
@@ -17,6 +18,7 @@ export interface ITransaction extends mongoose.Document {
     quantity: number,
     type: string,
     price: number,
+    gameId:string,
     turn: number
   }
 }
@@ -28,6 +30,7 @@ const TransactionSchema = new mongoose.Schema({
   quantity: Number,
   type: String,
   price: Number,
+  gameId:String,
   turn: Number
 })
 
@@ -40,6 +43,7 @@ TransactionSchema.virtual('public').get(function () {
     quantity: this.quantity,
     type: this.type,
     price: this.price,
+    gameId:this.gameId,
     turn: this.turn
   }
 })
