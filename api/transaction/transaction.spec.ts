@@ -47,7 +47,7 @@ describe ('GET /api/transaction', function () {
   it('Returns list of all transactions', function (done) {
      
       const requestBody = {
-      "gameId": "5b2f919e0272d00030623fa9",
+      "gameId": "5b2f919e0272d00030623fa9"
       
     };
       const history = GetHistory(requestBody,Transaction)
