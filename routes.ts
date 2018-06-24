@@ -3,7 +3,6 @@
  */
 
 import ping from './api/ping'
-import view from './api/view'
 
 import * as cors from "cors"
 
@@ -20,7 +19,6 @@ const routes = (app: express.Application): void => {
 
   // Insert routes below
   app.use('/api/ping', ping);
-  app.use('/api/views', view);
   app.use('/api/user', user);
   app.use('/api/transaction', transaction);
 
