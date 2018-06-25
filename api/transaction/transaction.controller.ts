@@ -48,3 +48,27 @@ export async function portfolio(req : express.Request, res : express.Response) {
       })
   }
 }
+
+export async function portfolioValue(req : express.Request, res : express.Response) {
+  try {
+    const all : ITransaction[] = await Transaction.find({name: req.params.name})
+    let txnBuy = 0;
+    let txnSell = 0;
+    all.forEach((txn) => {
+      if (txn.type === 'buy') {
+        txnBuy += (txn.quantity * txn.price);
+      }
+      if (txn.type === 'sell') {
+        txnSell += (txn.quantity * txn.price);
+      }
+    });
+    const portfolioVal = txnBuy - txnSell;
+    res.send({value: portfolioVal})
+  } catch (error) {
+    res
+      .status(500)
+      .send({
+        error: error.toString()
+      })
+  }
+}
