@@ -22,7 +22,7 @@ export const Transaction = {
         "_id": "5b2a3c9aa1cf190030e597f2",
         "createdAt": "2018-06-20T11:38:02.619Z",
         "name": "m1",
-        "stock": "Cargills",
+        "stock": "Cargills PLC",
         "quantity": 1,
         "type": "buy",
         "price": 135,
@@ -34,7 +34,7 @@ export const Transaction = {
         return[{
         
         "name": "ai1",
-    "value": 0
+        "value": 0
         
     }];
     }
