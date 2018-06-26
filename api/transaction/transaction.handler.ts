@@ -26,3 +26,9 @@ export async function portfolio(RequestBody: any, Transaction: any)
   //return 
   return _portfolio;
 }
+
+export async function portfolioValue(RequestBody :any, Transaction :any)
+{
+  const _portfoliovalue : ITransaction[] = await Transaction.find({name: RequestBody.name})
+  return _portfoliovalue;
+}
