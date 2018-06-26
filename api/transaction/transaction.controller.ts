@@ -63,7 +63,10 @@ export async function portfolioValue(req : express.Request, res : express.Respon
       }
     });
     const portfolioVal = txnBuy - txnSell;
-    res.send({value: portfolioVal})
+    res.send({
+      name: req.params.name,
+      value: portfolioVal,
+    })
   } catch (error) {
     res
       .status(500)
