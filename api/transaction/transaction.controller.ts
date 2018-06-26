@@ -1,19 +1,19 @@
-import {ITransaction, Transaction} from './transaction.model'
+import { ITransaction, Transaction } from './transaction.model'
 import * as express from 'express'
 
-export async function transaction(req : express.Request, res : express.Response) {
+export async function transaction(req: express.Request, res: express.Response) {
   try {
-    const _transaction : ITransaction = await Transaction.create({
+    const _transaction: ITransaction = await Transaction.create({
       createdAt: new Date(),
       name: req.body.name,
       stock: req.body.stock,
       quantity: req.body.quantity,
       type: req.body.type,
       price: req.body.price,
-      gameId:req.body.gameId,
-      turn : req.body.turn
+      gameId: req.body.gameId,
+      turn: req.body.turn
     })
-    res.send({status: true, transaction: _transaction})
+    res.send({ status: true, transaction: _transaction })
   } catch (error) {
     res
       .status(500)
@@ -23,9 +23,9 @@ export async function transaction(req : express.Request, res : express.Response)
   }
 }
 
-export async function getHistory(req : express.Request, res : express.Response) {
+export async function getHistory(req: express.Request, res: express.Response) {
   try {
-    const all : ITransaction[] = await Transaction.find({gameId: req.params.gameId})
+    const all: ITransaction[] = await Transaction.find({ gameId: req.params.gameId })
     res.send(all)
   } catch (error) {
     res
@@ -36,9 +36,9 @@ export async function getHistory(req : express.Request, res : express.Response) 
   }
 }
 
-export async function portfolio(req : express.Request, res : express.Response) {
+export async function portfolio(req: express.Request, res: express.Response) {
   try {
-    const all : ITransaction[] = await Transaction.find({name: req.params.name})
+    const all: ITransaction[] = await Transaction.find({ name: req.params.name })
     res.send(all)
   } catch (error) {
     res
@@ -49,9 +49,9 @@ export async function portfolio(req : express.Request, res : express.Response) {
   }
 }
 
-export async function portfolioValue(req : express.Request, res : express.Response) {
+export async function portfolioValue(req: express.Request, res: express.Response) {
   try {
-    const all : ITransaction[] = await Transaction.find({name: req.params.name})
+    const all: ITransaction[] = await Transaction.find({ name: req.params.name })
     let txnBuy = 0;
     let txnSell = 0;
     all.forEach((txn) => {
@@ -67,6 +67,19 @@ export async function portfolioValue(req : express.Request, res : express.Respon
       name: req.params.name,
       value: portfolioVal,
     })
+  } catch (error) {
+    res
+      .status(500)
+      .send({
+        error: error.toString()
+      })
+  }
+}
+
+export async function deleteAll(req: express.Request, res: express.Response) {
+  try {
+    await Transaction.deleteMany({});
+    res.send({ result: 'success' });
   } catch (error) {
     res
       .status(500)
