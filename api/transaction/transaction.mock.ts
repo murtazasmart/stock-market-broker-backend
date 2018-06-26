@@ -33,7 +33,8 @@ export const Transaction = {
     findPorfolioValu: function(){
         return[{
         
-        "value": 911,
+        "name": "ai1",
+    "value": 0
         
     }];
     }
