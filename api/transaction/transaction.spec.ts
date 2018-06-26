@@ -3,7 +3,7 @@ import {expect, assert} from 'chai'
 import * as supertest from 'supertest-as-promised'
 
 import app from '../../app'
-import {CreateTransaction, GetHistory} from './transaction.handler';
+import {CreateTransaction, GetHistory,portfolioValue} from './transaction.handler';
 import {Transaction} from './transaction.mock';
 
 // const request = supertest(app)
@@ -75,6 +75,22 @@ describe ('GET /api/transaction', function () {
     const _transaction = CreateTransaction(requestBody, Transaction);
 
     _transaction.then((data: any) => {
+        assert.equal(typeof data, typeof Object);
+        done();
+    })
+    .catch(err => {
+      done();
+    });
+  });
+
+  it('Returns the value of the portfolio', function(done) {
+     const requestBody = {
+      "name": "maheshi"
+      
+    };
+    const _portfoliovalue = portfolioValue(requestBody, Transaction);
+
+    _portfoliovalue.then((data: any) => {
         assert.equal(typeof data, typeof Object);
         done();
     })

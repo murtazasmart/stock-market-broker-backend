@@ -29,5 +29,12 @@ export const Transaction = {
         "turn": 19,
         "__v": 0
     }];
+},
+    findPorfolioValu: function(){
+        return[{
+        
+        "value": 911,
+        
+    }];
     }
 };
